@@ -1,0 +1,61 @@
+`html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  html
+<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>طلب منتج</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  html
+<nav class="navbar">
+  <a href="index.html">الرئيسية</a>
+  <a href="offers.html">العروض</a>
+  <a href="order.html">أطلب الآن</a>
+</nav>
+  <header>
+    <h1>نموذج الطلب</h1>
+  </header>
+
+  <main>
+    <form onsubmit="sendOrder(event)">
+      <label>الاسم الكامل:</label><br />
+      <input type="text" id="name" required /><br /><br />
+
+      <label>رقم الهاتف:</label><br />
+      <input type="tel" id="phone" required /><br /><br />
+
+      <label>العنوان:</label><br />
+      <input type="text" id="address" required /><br /><br />
+
+      <label>المنتج:</label><br />
+      <input type="text" id="product" value="منتج 1" readonly /><br /><br />
+
+      <label>الكمية:</label><br />
+      <input type="number" id="quantity" value="1" min="1" /><br /><br />
+
+      <button type="submit">تأكيد الطلب</button>
+    </form>
+  </main>
+
+  <script>
+    function sendOrder(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
+      const quantity = document.getElementById("quantity").value;
+
+      const message = `طلب جديد:
+الاسم: name
+الهاتف:{phone}العنوان: address
+الكمية:{quantity}`;
+
+      const whatsappLink = https://wa.me/212701787541?text=${encodeURIComponent(message)};
+      window.open(whatsappLink, '_blank');
+    }
+  </script>
+</body>
+</html>

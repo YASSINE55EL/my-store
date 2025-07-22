@@ -1,0 +1,26 @@
+html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>نتائج البحث</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #333; }
+    .result { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>نتائج البحث</h1>
+  <div class="result">
+    <p>بحثت عن: <strong id="queryText"></strong></p>
+  </div>
+
+  <script>
+    // استخراج قيمة query من الرابط
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('query');
+    document.getElementById('queryText').textContent = query ? query : 'لا توجد كلمات بحث';
+  </script>
+</body>
+</html>

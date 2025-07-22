@@ -1,0 +1,261 @@
+html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>متجري الإلكتروني</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #f9f9f9;
+  }
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  nav ul li {
+    cursor: pointer;
+  }
+  nav ul li:hover {
+    text-decoration: underline;
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
+  .product {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 220px;
+    padding: 15px;
+    text-align: center;
+  }
+  .product img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  .product h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+  }
+  .product p {
+    font-size: 14px;
+    color: #555;
+  }.product button {
+    margin-top: 10px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .product button:hover {
+    background-color: #1ebe57;
+  }
+</style>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<input id="name" type="text" placeholder="الاسم الكامل" />
+<input id="phone" type="text" placeholder="رقم الهاتف" />
+<input id="email" type="email" placeholder="البريد الإلكتروني" />
+<input id="password" type="password" placeholder="كلمة المرور" />
+<button onclick="signUp()">تسجيل جديد</button>
+  
+<nav class="navbar">
+  <a href="index.html">الرئيسية</a>
+  <a href="offers.html">العروض</a>
+  <a href="order.html">أطلب الآن</a>
+  
+<form class="search-form" action="search.html" method="GET">
+  <input type="text" name="query" placeholder="ابحث عن منتج..." required>
+  <button type="submit">بحث</button>
+</form>
+<a href="offers.html"><button>عروض التخفيضات</button></a>
+</nav>
+<nav>
+  <div class="logo">متجري الإلكتروني</div>
+  <ul>
+    <li>الرئيسية</li>
+    <li>المنتجات</li>
+    <li>تواصل معنا</li>
+  </ul>
+</nav>
+<h2>طلب خاص</h2>
+<form action="https://wa.me/212629901251" method="get" target="_blank">
+  <label>نوع الطلب:</label><br />
+  <input type="text" id="orderType" placeholder="مثلاً: سماعة بلون أزرق" required /><br /><br />
+
+  <label>الكمية:</label><br />
+  <input type="number" id="quantity" placeholder="مثلاً: 3" required /><br /><br />
+
+  <button type="button" onclick="sendWhatsApp()">أرسل عبر واتساب</button>
+</form>
+
+<script>
+  function sendWhatsApp() {
+    const order = document.getElementById('orderType').value;
+    const qty = document.getElementById('quantity').value;
+    const msg = `طلب خاص:%0Aالمنتج: order{qty}`;
+    window.open(`https://wa.me/212629901251?text=${msg}`, '_blank');
+  }
+</script>
+<div class="products">
+
+  <div class="product">
+    <img src="https://via.placeholder.com/150" alt="سماعة رأس الألعاب" />
+    <h3>سماعة رأس للألعاب </h3>
+    <p class="price">السعر: 200 درهم</p>
+    <p>صوت محيطي مع ميكروفون عالي الجودة.</p>
+    <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20سماعة%20رأس%20الألعاب" target="_blank">
+      <button>تواصل عبر واتساب</button>
+    </a>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/150" alt="كابل شحن سريع" />
+    <h3>كابل شحن سريع</h3>
+    <p class="price">السعر: 49 درهم</p>
+    <p>يدعم الشحن السريع لجميع الأجهزة.</p>
+    <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20كابل%20الشحن%20السريع" target="_blank">
+      <button>تواصل عبر واتساب</button>
+    </a>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/150" alt="بطارية متنقلة" />
+    <h3>بطارية متنقلة 10000mAh</h3>
+    <p>شحن سريع للهواتف والأجهزة اللوحية.</p>
+    <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20البطارية%20المتنقلة" target="_blank">
+      <button>تواصل عبر واتساب</button>
+    </a>
+</div>
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="سماعة بلوتوث" />
+  <h3>سماعة بلوتوث </h3>
+  <p class="price">السعر: 200 درهم</p>
+  <p>صوت نقي واتصال سريع عبر البلوتوث.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20سماعة%20بلوتوث" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</div>
+
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="حامل هاتف للسيارة" />
+  <h3>حامل هاتف للسيارة </h3>
+  <p class="price">السعر: 100 درهم</p>
+  <p>مغناطيسي وثابت، مناسب لجميع الهواتف.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20حامل%20الهاتف" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</div>
+
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="شاحن لاسلكي" />
+  <h3>شاحن لاسلكي </h3>
+  <p class="price">السعر: 1000 درهم</p>
+  <p>شحن سريع مع تصميم أنيق ومتوافق مع معظم الأجهزة.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20الشاحن%20اللاسلكي" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</div>
+
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="ماوس لاسلكي" />
+  <h3>ماوس لاسلكي </h3>
+  <p class="price">السعر: 100 درهم</p>
+  <p>تحكم دقيق، تصميم مريح، بطارية تدوم طويلًا.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20الماوس%20اللاسلكي" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</div>
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="سترة شتوية رجالية" />
+  <h3>سترة شتوية رجالية </h3>
+  <p class="price">السعر: 1000 درهم</p>
+  <p>تصميم أنيق، دافئة ومقاومة للمطر.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20السترة%20الشتوية" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</div>
+
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="فستان نسائي" />
+  <h3>فستان نسائي </h3>
+  <p class="price">السعر: 1200 درهم</p>
+  <p>مناسب للمناسبات، تصميم عصري وأنيق.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20الفستان%20النسائي" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</div>
+
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="سروال جينز" />
+  <h3>سروال جينز </h3>
+  <p class="price">السعر: 249 درهم</p>
+  <p>مريح بجودة عالية، متوفر بجميع المقاسات.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20سروال%20الجينز" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</div>
+
+<div class="product">
+  <img src="https://via.placeholder.com/150" alt="حذاء رياضي" />
+  <h3>حذاء رياضي  </h3>
+  <p class="price">السعر: 199 درهم</p>
+  <p>خفيف ومتين، مثالي للجري والأنشطة اليومية.</p>
+  <a href="https://wa.me/212701787541?text=أريد%20معلومات%20عن%20الحذاء%20الرياضي" target="_blank">
+    <button>تواصل عبر واتساب</button>
+  </a>
+</body>
+<!-- زر رجوع للأعلى -->
+<button onclick="topFunction()" id="myBtn" title="رجوع للأعلى" 
+style="display:none;position:fixed;bottom:20px;right:30px;z-index:99;font-size:18px;
+background:#333;color:#fff;border:none;padding:10px 15px;cursor:pointer;border-radius:5px;">
+↑
+</button>
+
+<script>
+// إظهار الزر عندما ينزل المستخدم 100 بيكسل
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  const btn = document.getElementById("myBtn");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+
+// عند الضغط على الزر، الرجوع لأعلى الصفحة
+function topFunction() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</html>
